@@ -1,16 +1,39 @@
-# React + Vite
+# Projeto 02 Full Stack: Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+SPA em React do controle financeiro pessoal. Consome a API de [projeto02-fullstack-back-end](https://github.com/JoaoACarboni/projeto02-fullstack-back-end).
 
-Currently, two official plugins are available:
+## Tecnologias utilizadas
+- React com Vite
+- React Router
+- Axios
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Como rodar do zero
+1. Suba antes a API do back-end (veja o README dele).
+2. Instale as dependências:
+   ```
+   npm install
+   ```
+3. Copie `.env.example` para `.env` (por padrão a API é `http://localhost:3000/api`).
+4. Rode:
+   ```
+   npm run dev
+   ```
+   A aplicação abre em `http://localhost:5173`.
 
-## React Compiler
+## Estrutura
+```
+src/
+  components/  telas e componentes
+  contexts/    AuthContext (usuário, token, login, logout, cadastro)
+  services/    cliente HTTP único (api.js)
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
+- Cadastro e login, com erros do servidor exibidos junto aos campos
+- Rotas protegidas e sessão que sobrevive ao recarregamento da página
+- Logout automático quando o token expira (401)
+- Menu e telas em desenvolvimento: dashboard, lançamentos, categorias, fontes/destinos, relatórios e faturas
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Autores
+João Antonio Carboni Gomes
+Diogo Calegari dos Reis
